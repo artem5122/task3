@@ -11,6 +11,8 @@
 int main()
 {
     setlocale(LC_ALL, "Russian");
+    system("chcp 65001 > nul");
+
 
     int n, m;
     std::cout << "Введите n (граница диапазона): ";
@@ -26,22 +28,22 @@ int main()
 
     RangePartition rangePartition(basicNumbers, n, m);
     primes = rangePartition.findPrimes();
-    std::cout << rangePartition.duration << std::endl;
+    std::cout << "Время выполнения: " << rangePartition.duration << std::endl;
 
 
     BasePartition basePartition(basicNumbers, n, m);
     primes = basePartition.findPrimes();
-    std::cout << basePartition.duration << std::endl;
+    std::cout << "Время выполнения: " << basePartition.duration << std::endl;
 
 
     RangePartitionThreadPool rangePartitionTP(basicNumbers, n, m);
     primes = rangePartitionTP.findPrimes();
-    std::cout << rangePartitionTP.duration << std::endl;
+    std::cout << "Время выполнения: " << rangePartitionTP.duration << std::endl;
 
 
     BasePartitionThreadPool basePartitionTP(basicNumbers, n, m);
     primes = basePartitionTP.findPrimes();
-    std::cout << basePartitionTP.duration << std::endl;
+    std::cout << "Время выполнения: " << basePartitionTP.duration << std::endl;
 
 
     FoundPrimes foundprimes(basicNumbers, primes);
