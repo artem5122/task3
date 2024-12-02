@@ -127,26 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-	<ClCompile Include="src\found_primes\FoundPrimes.cpp" />
-	<ClCompile Include="src\number_generation_and_sieve\NumbersGenerator.cpp" />
-	<ClCompile Include="src\number_generation_and_sieve\EratosthenesSieve.cpp" />
-	<ClCompile Include="src\partition_threads\without_thread_pool\BasePartition.cpp" />
-	<ClCompile Include="src\partition_threads\without_thread_pool\RangePartition.cpp" />
-	<ClCompile Include="src\partition_threads\with_thread_pool\BasePartitionThreadPool.cpp" />
-	<ClCompile Include="src\partition_threads\with_thread_pool\RangePartitionThreadPool.cpp" />
-	<ClCompile Include="src\task3.cpp" />
+    <ClCompile Include="src\found_primes\FoundPrimes.cpp" />
+    <ClCompile Include="src\number_generation_and_sieve\NumbersGenerator.cpp" />
+    <ClCompile Include="src\number_generation_and_sieve\EratosthenesSieve.cpp" />
+    <ClCompile Include="src\partition_threads\without_thread_pool\BasePartition.cpp" />
+    <ClCompile Include="src\partition_threads\without_thread_pool\RangePartition.cpp" />
+    <ClCompile Include="src\partition_threads\with_thread_pool\BasePartitionThreadPool.cpp" />
+    <ClCompile Include="src\partition_threads\with_thread_pool\RangePartitionThreadPool.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-	<ClInclude Include="include\found_primes\FoundPrimes.h" />
-	<ClInclude Include="include\number_generation_and_sieve\NumbersGenerator.h" />
-	<ClInclude Include="include\number_generation_and_sieve\EratosthenesSieve.h" />
-	<ClInclude Include="include\partition_threads\PartitionAbstract.h" />
-	<ClInclude Include="include\partition_threads\without_thread_pool\BasePartition.h" />
-	<ClInclude Include="include\partition_threads\without_thread_pool\RangePartition.h" />
-	<ClInclude Include="include\partition_threads\with_thread_pool\PartitionThreadPoolAbstract.h" />
-	<ClInclude Include="include\partition_threads\with_thread_pool\thread_pool_impl\BasePartitionThreadPool.h" />
-	<ClInclude Include="include\partition_threads\with_thread_pool\thread_pool_impl\RangePartitionThreadPool.h" />
-
+    <ClInclude Include="include\found_primes\FoundPrimes.h" />
+    <ClInclude Include="include\number_generation_and_sieve\NumbersGenerator.h" />
+    <ClInclude Include="include\number_generation_and_sieve\EratosthenesSieve.h" />
+    <ClInclude Include="include\partition_threads\PartitionAbstract.h" />
+    <ClInclude Include="include\partition_threads\without_thread_pool\BasePartition.h" />
+    <ClInclude Include="include\partition_threads\without_thread_pool\RangePartition.h" />
+    <ClInclude Include="include\partition_threads\with_thread_pool\PartitionThreadPoolAbstract.h" />
+    <ClInclude Include="include\partition_threads\with_thread_pool\thread_pool_impl\BasePartitionThreadPool.h" />
+    <ClInclude Include="include\partition_threads\with_thread_pool\thread_pool_impl\RangePartitionThreadPool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
