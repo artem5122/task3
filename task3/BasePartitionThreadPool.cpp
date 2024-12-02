@@ -1,4 +1,4 @@
-#include "BasePartitionThreadPool.h"
+п»ї#include "BasePartitionThreadPool.h"
 
 BasePartitionThreadPool::BasePartitionThreadPool(const std::vector<int>& basicNumbers, int n, int m)
     : PartitionThreadPoolAbstract(basicNumbers, n, m) { 
@@ -90,10 +90,10 @@ void BasePartitionThreadPool::processRange(const std::vector<int>& localBasicNum
         if (isPrimeFlags[num - sqrtN]) {
             for (int i = rangeStart; i < rangeEnd; ++i) {
                 int base = localBasicNumbers[i];
-                if (base * base > num) break; // Достаточно проверять до sqrt(num)
+                if (base * base > num) break; // Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїСЂРѕРІРµСЂСЏС‚СЊ РґРѕ sqrt(num)
 
                 if (num % base == 0) {
-                    // Число не простое
+                    // Р§РёСЃР»Рѕ РЅРµ РїСЂРѕСЃС‚РѕРµ
                     isPrimeFlags[num - sqrtN] = false;
                     break;
                 }

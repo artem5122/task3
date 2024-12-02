@@ -1,4 +1,4 @@
-#include "BasePartition.h"
+п»ї#include "BasePartition.h"
 #include <thread>
 #include <cmath>
 #include <algorithm>
@@ -28,7 +28,7 @@ std::vector<int> BasePartition::findPrimes() {
         thread.join();
     }
 
-    // Извлечение простых чисел из флагов
+    // РР·РІР»РµС‡РµРЅРёРµ РїСЂРѕСЃС‚С‹С… С‡РёСЃРµР» РёР· С„Р»Р°РіРѕРІ
     std::vector<int> primes;
     int sqrtN = std::sqrt(n);
     for (int i = 0; i < rangeSize - 1; ++i) {
@@ -49,10 +49,10 @@ void BasePartition::processRange(const std::vector<int>& localBasicNumbers, int 
         if (isPrimeFlags[num - sqrtN]) {
             for (int i = rangeStart; i < rangeEnd; ++i) {
                 int base = localBasicNumbers[i];
-                if (base * base > num) break; // Достаточно проверять до sqrt(num)
+                if (base * base > num) break; // Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїСЂРѕРІРµСЂСЏС‚СЊ РґРѕ sqrt(num)
 
                 if (num % base == 0) {
-                    // Число не простое
+                    // Р§РёСЃР»Рѕ РЅРµ РїСЂРѕСЃС‚РѕРµ
                     isPrimeFlags[num - sqrtN] = false;
                     break;
                 }
@@ -111,16 +111,16 @@ void BasePartition::processRange(const std::vector<int>& localBasicNumbers, int 
 
 
 
-// Более читаемая версия метода. Работает медленнее из-за стекового фрейма
+// Р‘РѕР»РµРµ С‡РёС‚Р°РµРјР°СЏ РІРµСЂСЃРёСЏ РјРµС‚РѕРґР°. Р Р°Р±РѕС‚Р°РµС‚ РјРµРґР»РµРЅРЅРµРµ РёР·-Р·Р° СЃС‚РµРєРѕРІРѕРіРѕ С„СЂРµР№РјР°
 
-//// Вызов функции сильно замедляет код
+//// Р’С‹Р·РѕРІ С„СѓРЅРєС†РёРё СЃРёР»СЊРЅРѕ Р·Р°РјРµРґР»СЏРµС‚ РєРѕРґ
 //
 //bool BasePartition::isNumberPrime(int num, const std::vector<int>& localBasicNumbers, int rangeStart, int rangeEnd) {
 //    for (int i = rangeStart; i < rangeEnd; ++i) {
 //        int base = localBasicNumbers[i];
-//        if (base * base > num) break; // Достаточно проверять до sqrt(num)
+//        if (base * base > num) break; // Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїСЂРѕРІРµСЂСЏС‚СЊ РґРѕ sqrt(num)
 //        if (num % base == 0) {
-//            // Число не простое
+//            // Р§РёСЃР»Рѕ РЅРµ РїСЂРѕСЃС‚РѕРµ
 //            return false;
 //        }
 //    }

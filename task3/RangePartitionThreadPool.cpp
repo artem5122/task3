@@ -1,4 +1,4 @@
-#include "RangePartitionThreadPool.h"
+п»ї#include "RangePartitionThreadPool.h"
 #include <algorithm>
 #include <iostream>
 #include <future>
@@ -32,7 +32,7 @@ void RangePartitionThreadPool::addTask(const std::function<void()>& task) {
     condition.notify_one();
 }
 
-// Ожидает появления новых задач
+// РћР¶РёРґР°РµС‚ РїРѕСЏРІР»РµРЅРёСЏ РЅРѕРІС‹С… Р·Р°РґР°С‡
 void RangePartitionThreadPool::workerThread() {
     while (true) {
         std::function<void()> task;
@@ -60,7 +60,7 @@ std::vector<int> RangePartitionThreadPool::findPrimes() {
     std::vector<std::vector<int>> threadResults(m);
     std::mutex resultsMutex;
 
-    // Добавление задач в тред пул
+    // Р”РѕР±Р°РІР»РµРЅРёРµ Р·Р°РґР°С‡ РІ С‚СЂРµРґ РїСѓР»
     for (int i = 0; i < m; ++i) {
         int end = (i == m - 1) ? n : (start + rangeSize - 1);
 
@@ -68,14 +68,14 @@ std::vector<int> RangePartitionThreadPool::findPrimes() {
             std::vector<int> localPrimes;
             processRange(start, end, localPrimes);
 
-            // Более эффективное присваивание значения. Без копирования
+            // Р‘РѕР»РµРµ СЌС„С„РµРєС‚РёРІРЅРѕРµ РїСЂРёСЃРІР°РёРІР°РЅРёРµ Р·РЅР°С‡РµРЅРёСЏ. Р‘РµР· РєРѕРїРёСЂРѕРІР°РЅРёСЏ
             threadResults[i] = std::move(localPrimes);
             });
 
         start += rangeSize;
     }
 
-    // Ожидание завершения всех задач
+    // РћР¶РёРґР°РЅРёРµ Р·Р°РІРµСЂС€РµРЅРёСЏ РІСЃРµС… Р·Р°РґР°С‡
     {
         std::unique_lock<std::mutex> lock(queueMutex);
         condition.wait(lock, [this] { return taskQueue.empty(); });
@@ -85,7 +85,7 @@ std::vector<int> RangePartitionThreadPool::findPrimes() {
         std::unique_lock<std::mutex> lock(queueMutex);
         stop = true;
     }
-    // Уведомление всех ожидающих потоков
+    // РЈРІРµРґРѕРјР»РµРЅРёРµ РІСЃРµС… РѕР¶РёРґР°СЋС‰РёС… РїРѕС‚РѕРєРѕРІ
     condition.notify_all();
 
     for (std::thread& thread : threadPool) {

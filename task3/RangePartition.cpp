@@ -1,4 +1,4 @@
-#include "RangePartition.h"
+п»ї#include "RangePartition.h"
 #include <vector>
 #include <thread>
 #include <cmath>
@@ -11,16 +11,16 @@ std::vector<int> RangePartition::findPrimes() {
     auto startTimer = std::chrono::high_resolution_clock::now();
 
     std::vector<std::thread> threads;                  
-    std::vector<std::vector<int>> threadResults(m); // Векторы результатов для каждого потока
+    std::vector<std::vector<int>> threadResults(m); // Р’РµРєС‚РѕСЂС‹ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РґР»СЏ РєР°Р¶РґРѕРіРѕ РїРѕС‚РѕРєР°
     int rangeSize = (n - std::sqrt(n)) / m;            
     int start = std::sqrt(n);                      
 
     for (int i = 0; i < m; ++i) {
         int end = (i == m - 1) ? n : (start + rangeSize - 1);
 
-        //Передаётся указатель на метод processRange, указатель на текущий объект, ... 
-        // и ссылка на вектор primes (чтобы не копировать)
-        // & используется в обычных вызовах функций, std::ref в потоках, лямбдах
+        //РџРµСЂРµРґР°С‘С‚СЃСЏ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РјРµС‚РѕРґ processRange, СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С‚РµРєСѓС‰РёР№ РѕР±СЉРµРєС‚, ... 
+        // Рё СЃСЃС‹Р»РєР° РЅР° РІРµРєС‚РѕСЂ primes (С‡С‚РѕР±С‹ РЅРµ РєРѕРїРёСЂРѕРІР°С‚СЊ)
+        // & РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РІ РѕР±С‹С‡РЅС‹С… РІС‹Р·РѕРІР°С… С„СѓРЅРєС†РёР№, std::ref РІ РїРѕС‚РѕРєР°С…, Р»СЏРјР±РґР°С…
         threads.emplace_back(&RangePartition::processRange, this, start, end, std::ref(threadResults[i]));
         start += rangeSize; 
     }
@@ -29,7 +29,7 @@ std::vector<int> RangePartition::findPrimes() {
         thread.join();
     }
 
-    // Конкатенация результатов
+    // РљРѕРЅРєР°С‚РµРЅР°С†РёСЏ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
     std::vector<int> primes;
     for (const auto& localPrimes : threadResults) {
         primes.insert(primes.end(), localPrimes.begin(), localPrimes.end());
@@ -43,14 +43,14 @@ std::vector<int> RangePartition::findPrimes() {
 }
 
 
-// Метод для поиска простых чисел в указанном диапазоне
+// РњРµС‚РѕРґ РґР»СЏ РїРѕРёСЃРєР° РїСЂРѕСЃС‚С‹С… С‡РёСЃРµР» РІ СѓРєР°Р·Р°РЅРЅРѕРј РґРёР°РїР°Р·РѕРЅРµ
 void RangePartition::processRange(int start, int end, std::vector<int>& localPrimes) {
     for (int num = start; num <= end; ++num) {
         bool isPrime = true;
         for (const auto& base : basicNumbers) {
-            if (base * base > num) break; // Достаточно проверять делители до sqrt(num)
+            if (base * base > num) break; // Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїСЂРѕРІРµСЂСЏС‚СЊ РґРµР»РёС‚РµР»Рё РґРѕ sqrt(num)
             if (num % base == 0) {
-                isPrime = false; // Число не простое
+                isPrime = false; // Р§РёСЃР»Рѕ РЅРµ РїСЂРѕСЃС‚РѕРµ
                 break;
             }
         }

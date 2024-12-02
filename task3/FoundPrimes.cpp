@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "FoundPrimes.h"
 #include <iostream>
 #include <fstream>
@@ -23,6 +23,6 @@ void FoundPrimes::printToFile(const std::string& filename){
         file.close();
     }
     else {
-        std::cerr << "Îøèáêà îòêðûòèÿ ôàéëà!" << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°" << std::endl;
     }
 }
