@@ -1,4 +1,4 @@
-﻿#include "BasePartitionThreadPool.h"
+﻿#include "../../../include/partition_threads/with_thread_pool/thread_pool_impl/BasePartitionThreadPool.h"
 
 BasePartitionThreadPool::BasePartitionThreadPool(const std::vector<int>& basicNumbers, int n, int m)
     : PartitionThreadPoolAbstract(basicNumbers, n, m) { 

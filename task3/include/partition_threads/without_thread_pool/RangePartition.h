@@ -1,7 +1,7 @@
 #ifndef RANGE_PARTITION_H
 #define RANGE_PARTITION_H
 
-#include "PartitionAbstract.h"
+#include "../PartitionAbstract.h"
 #include <vector>
 #include <cmath>
 

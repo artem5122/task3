@@ -1,4 +1,5 @@
-﻿#include "BasePartition.h"
+﻿#include "../../../include/partition_threads/without_thread_pool/BasePartition.h"
+
 #include <thread>
 #include <cmath>
 #include <algorithm>

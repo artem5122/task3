@@ -1,4 +1,4 @@
-#include "EratosthenesSieve.h"
+#include "../../include/number_generation_and_sieve/EratosthenesSieve.h"
 
 
 std::vector<int> EratosthenesSieve::getBasicNumbers(std::vector<int> numbers)

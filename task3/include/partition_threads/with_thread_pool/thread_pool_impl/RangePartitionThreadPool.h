@@ -1,7 +1,7 @@
 #ifndef RANGE_PARTITION_THREAD_POOL_H
 #define RANGE_PARTITION_THREAD_POOL_H
 
-#include "PartitionThreadPoolAbstract.h"
+#include "../PartitionThreadPoolAbstract.h"
 #include <vector>
 #include <cmath>
 

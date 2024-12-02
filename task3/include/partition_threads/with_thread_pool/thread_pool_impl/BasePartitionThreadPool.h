@@ -1,8 +1,9 @@
 #ifndef BASEPARTITIONTHREADPOOL_H
 #define BASEPARTITIONTHREADPOOL_H
 
-#include "PartitionThreadPoolAbstract.h"
+#include "../PartitionThreadPoolAbstract.h"
 #include <cmath>
+
 
 class BasePartitionThreadPool : public PartitionThreadPoolAbstract {
 public:

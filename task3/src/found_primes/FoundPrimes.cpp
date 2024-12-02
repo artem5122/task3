@@ -1,5 +1,4 @@
-﻿#pragma once
-#include "FoundPrimes.h"
+﻿#include "../../include/found_primes/FoundPrimes.h"
 #include <iostream>
 #include <fstream>
 

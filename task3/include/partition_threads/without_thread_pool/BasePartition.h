@@ -1,5 +1,5 @@
 #pragma once
-#include "PartitionAbstract.h"
+#include "../PartitionAbstract.h"
 #include <vector>
 #include <string>
 #include <mutex>

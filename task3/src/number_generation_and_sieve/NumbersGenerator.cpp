@@ -1,4 +1,4 @@
-#include "NumbersGenerator.h"
+#include "../../include/number_generation_and_sieve/NumbersGenerator.h"
 
 std::vector<int> NumbersGenerator::generateNumbers(int N)
 {

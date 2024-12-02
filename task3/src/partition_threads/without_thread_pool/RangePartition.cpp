@@ -1,4 +1,5 @@
-﻿#include "RangePartition.h"
+﻿#include "../../../include/partition_threads/without_thread_pool/RangePartition.h"
+
 #include <vector>
 #include <thread>
 #include <cmath>
